@@ -77,7 +77,12 @@ const createCssClassInFile = (className: string, file: vscode.Uri) => {
         );
         editor
             .edit((editBuilder) => {
-                editBuilder.insert(position, `\n\n.${className} {\n\n}`);
+                const toInsert = className
+                    .split(' ')
+                    .map((c) => `\n\n.${c} {\n\n}`)
+                    .join('');
+
+                editBuilder.insert(position, toInsert);
             })
             .then(() => {
                 // Move the cursor inside the brackets
