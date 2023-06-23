@@ -1,6 +1,6 @@
 {
   "name": "css-class-creator",
-  "displayName": "css-class-creator",
+  "displayName": "CSS Class Creator",
   "description": "Creates CSS classes from HTML code and React",
   "version": "1.0.0",
   "publisher": "tanndlin",
