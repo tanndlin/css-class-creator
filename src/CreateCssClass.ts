@@ -12,6 +12,11 @@ export const createCssClass = () => {
     const selection = editor.selection;
     const text = editor.document.getText(selection);
 
+    if (!text) {
+        vscode.window.showErrorMessage('No text selected');
+        return;
+    }
+
     // Use regex to see if this is inside a "className" or "class" attribute
     if (!isClassName(lineText, text)) {
         return;
@@ -30,6 +35,16 @@ export const createCssClass = () => {
 };
 
 const handleGotFiles = (className: string, files: vscode.Uri[]) => {
+    if (!files.length) {
+        vscode.window.showErrorMessage('No css files found');
+        return;
+    }
+
+    if (files.length === 1) {
+        createCssClassInFile(className, files[0]);
+        return;
+    }
+
     // Make user select a file
     const quickpick = vscode.window.createQuickPick();
     quickpick.placeholder = 'Select a file';
