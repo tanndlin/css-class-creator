@@ -2,7 +2,7 @@
   "name": "css-class-creator",
   "displayName": "css-class-creator",
   "description": "Creates CSS classes from HTML code and React",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.79.0"
   },

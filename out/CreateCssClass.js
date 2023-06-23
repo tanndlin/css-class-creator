@@ -6,7 +6,7 @@ const createCssClass = () => {
     // Get the document
     const editor = vscode.window.activeTextEditor;
     if (!editor) {
-        return false;
+        return;
     }
     // Get the selection
     const lineText = editor.document.lineAt(editor.selection.start.line).text;
@@ -15,7 +15,7 @@ const createCssClass = () => {
     // Use regex to see if this is inside a "className" or "class" attribute
     if (!isClassName(lineText, text)) {
         console.log('nope');
-        return false;
+        return;
     }
     const config = vscode.workspace.getConfiguration('css-class-creator');
     const fileAssociations = config.get('fileAssociations.Target');
@@ -23,7 +23,6 @@ const createCssClass = () => {
     vscode.workspace
         .findFiles(`**/{${fileAssociations.join(',')}}`, `**/{${exlclude.join(',')}}`)
         .then((files) => handleGotFiles(text, files));
-    return true;
 };
 exports.createCssClass = createCssClass;
 const handleGotFiles = (className, files) => {
