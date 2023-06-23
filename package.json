@@ -24,7 +24,9 @@
           "type": "array",
           "default": [
             "node_modules",
-            ".git"
+            ".git",
+            "build",
+            "out"
           ],
           "description": "Folders to exclude from the search."
         },
@@ -51,7 +53,8 @@
     "commands": [
       {
         "command": "css-class-creator.create-css-class",
-        "title": "Create CSS Class"
+        "title": "Create CSS Class",
+        "category": "CSS Class Creator"
       }
     ]
   },
