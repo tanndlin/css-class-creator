@@ -1,4 +1,4 @@
-# css-class-creator README
+# CSS-Class-Creator
 
 A VSC extension for automatically creating a css class based on some HTML or react code.
 

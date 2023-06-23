@@ -3,6 +3,7 @@
   "displayName": "css-class-creator",
   "description": "Creates CSS classes from HTML code and React",
   "version": "1.0.0",
+  "publisher": "tanndlin",
   "repository": {
     "type": "git",
     "url": "https://github.com/tanndlin/css-class-creator"
