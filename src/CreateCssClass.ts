@@ -14,7 +14,6 @@ export const createCssClass = () => {
 
     // Use regex to see if this is inside a "className" or "class" attribute
     if (!isClassName(lineText, text)) {
-        console.log('nope');
         return;
     }
 
@@ -31,8 +30,6 @@ export const createCssClass = () => {
 };
 
 const handleGotFiles = (className: string, files: vscode.Uri[]) => {
-    console.log(files);
-
     // Make user select a file
     const quickpick = vscode.window.createQuickPick();
     quickpick.placeholder = 'Select a file';
@@ -55,8 +52,6 @@ const handleGotFiles = (className: string, files: vscode.Uri[]) => {
 };
 
 const createCssClassInFile = (className: string, file: vscode.Uri) => {
-    console.log(file);
-
     // Open the file
     vscode.window.showTextDocument(file).then((editor) => {
         // Write className at the bottom of the file
